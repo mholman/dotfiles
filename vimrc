@@ -241,30 +241,35 @@ nnoremap <C-p> :cprevious<CR>
 nnoremap <C-n> :cnext<CR>
 nnoremap å `
 " disable arrow keys till i have learned
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
+"noremap  <Up> ""
+"noremap! <Up> <Esc>
+"noremap  <Down> ""
+"noremap! <Down> <Esc>
 "noremap  <Left> ""
-noremap! <Left> <Esc>
+"noremap! <Left> <Esc>
 "noremap  <Right> ""
-noremap! <Right> <Esc>
-map <right> :bn<cr>
-map <left> :bp<cr>
+"noremap! <Right> <Esc>
+"map <right> :bn<cr>
+"map <left> :bp<cr>
 
 "tab mappings
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
+map <C-T> :tabnew<cr>
+map <C-W> :close<cr>
+map <m-1> 1gt
+map <m-2> 2gt
+map <m-3> 3gt
+map <m-4> 4gt
+map <m-5> 5gt
+map <m-6> 6gt
+map <m-7> 7gt
+map <m-8> 8gt
+map <m-9> 9gt
 " these already exists in macvim
 "map <D-t> :tabnew<CR>
 "map <D-w> :tabclose<CR>
+
+map <C-S> :w<CR>
+map <C-S-S> :wa<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket expanding
@@ -296,6 +301,9 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+map <C-TAB> gt
+map <C-S-TAB> gT
 
 if MySys() == "mac"
   nmap <D-j> <M-j>
