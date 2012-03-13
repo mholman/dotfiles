@@ -1,7 +1,6 @@
 [global_config]
   handle_size = 2
 [keybindings]
-  switch_to_tab_9 = <Alt>9
   switch_to_tab_1 = <Alt>1
   go_up = <Shift><Control>k
   switch_to_tab_10 = <Alt>0
@@ -15,9 +14,8 @@
   switch_to_tab_2 = <Alt>2
   go_right = <Shift><Control>l
   go_left = <Shift><Control>h
-  split_vert = <Shift><Control>v
-  copy = <Shift><Control>y
-  paste = <Shift><Control>p
+  split_vert = <Shift><Control>d
+  switch_to_tab_9 = <Alt>9
   switch_to_tab_8 = <Alt>8
   switch_to_tab_3 = <Alt>3
 [profiles]
