@@ -166,12 +166,18 @@ inoremap kj <ESC>
 
 set guioptions=e
 
-set background=dark
-if has("gui_running")
-  colorscheme solarized
-else
-  colorscheme darkblue
-endif
+set t_Co=16
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+set background=light
+"if has("gui_running")
+"  set background=light
+"  colorscheme solarized
+"else
+"  set background=dark
+"  colorscheme darkblue
+"endif
+colorscheme solarized
 
 " Set font according to system
 if MySys() == "mac"
