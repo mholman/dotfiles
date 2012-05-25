@@ -118,7 +118,7 @@ set hidden
 "set wildmenu
 "set wildmode=list:longest
 "set visualbell
-set cursorline
+"set cursorline
 "set ttyfast
 "set ruler
 "set backspace=indent,eol,start
@@ -230,7 +230,7 @@ vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
 let g:CommandTMaxHeight = 15
-noremap <leader>y :CommandTFlush<CR>
+noremap <leader>T :CommandTFlush<CR>:CommandT<CR>
 
 map § $
 imap § $
@@ -261,7 +261,6 @@ nnoremap å `
 
 "tab mappings
 map <C-T> :tabnew<cr>
-map <C-W> :close<cr>
 map <m-1> 1gt
 map <m-2> 2gt
 map <m-3> 3gt
@@ -270,7 +269,7 @@ map <m-5> 5gt
 map <m-6> 6gt
 map <m-7> 7gt
 map <m-8> 8gt
-map <m-9> 9gt
+map <m-9> :Gstatus<cr>
 " these already exists in macvim
 "map <D-t> :tabnew<CR>
 "map <D-w> :tabclose<CR>
@@ -319,6 +318,16 @@ if MySys() == "mac"
   vmap <D-k> <M-k>
 endif
 
+nnoremap <leader>e :call GetAirbrakeError()
+"nnoremap <leader>t :!curl dimea.airbrake.io/errors.xml?auth_token=fe68e3db27c16ac817a6d5f69d99b97d17658156 > errors.txt
+
+func! GetAirbrakeError()
+  "let cmd = "silent !(tail -n 100 log/development.log >| /tmp/airbrake_error.txt)"
+  let cmd = "silent !(./filter.sh)"
+  silent exec cmd
+  cfile /tmp/airbrake_error.txt
+  copen 
+endfunction
 
 cno $q <C-\>eDeleteTillSlash()<cr>
 
