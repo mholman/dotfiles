@@ -1,6 +1,6 @@
 filetype off
 call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#helptags()
 
 " some stuff from http://amix.dk/vim/vimrc.html
 
@@ -192,7 +192,23 @@ elseif MySys() == "linux"
   set shell=/bin/bash
 endif
 
+
+" Abbreviations
+iab <expr> dts strftime("%Y-%m-%d")
+iab <expr> dtts strftime("%Y-%m-%d %H:%M")
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " leaders Q
+
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v<CR>
+nnoremap <leader>gC :Gcommit -v --amend<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gw :Gwrite<CR>
+
+nnoremap <leader>p :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 nnoremap <leader>w <C-w>v<C-w>l
 
 nnoremap <leader>e :RVview<cr>:RSview _form<cr><C-w>h:RSmodel<cr><C-w>k
@@ -219,6 +235,7 @@ nnoremap <leader>N :Rmigration
 nnoremap <leader>m :Rmodel<cr>
 nnoremap <leader>M :Rmodel 
 
+cmap w!! w !sudo tee % >/dev/null
 
 
 nnoremap <C-h> <C-w>h
@@ -230,6 +247,7 @@ vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
 let g:CommandTMaxHeight = 15
+noremap <leader>t :CommandT<CR>
 noremap <leader>T :CommandTFlush<CR>:CommandT<CR>
 
 map § $
@@ -363,6 +381,7 @@ nnoremap <F5> :GundoToggle<CR>
 " highlight ColorColumn guibg=#333333
 
 set wildignore+=*.jpg,*.bmp,*.gif
+" ignore doc förstör helptags
 set wildignore+=doc
 set wildignore+=coverage
 set wildignore+=*~
