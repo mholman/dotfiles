@@ -100,3 +100,6 @@
 [submodule "config/awesome/pomodoro"]
 	path = config/awesome/pomodoro
 	url = git://github.com/nikolavp/awesome-pomodoro.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
